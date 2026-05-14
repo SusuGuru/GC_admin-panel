@@ -11,6 +11,7 @@ import { loadFontsFromTailwindSource } from './plugins/loadFontsFromTailwindSour
 import { nextPublicProcessEnv } from './plugins/nextPublicProcessEnv';
 import { restart } from './plugins/restart';
 import { restartEnvFileChange } from './plugins/restartEnvFileChange';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   build: {
@@ -42,6 +43,7 @@ export default defineConfig({
   },
   logLevel: 'info',
   plugins: [
+    react(),
     nextPublicProcessEnv(),
     restartEnvFileChange(),
     babel({
